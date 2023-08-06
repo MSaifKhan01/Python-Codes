@@ -1,5 +1,5 @@
 import random
-option=["stone","paper","scissor"]
+option=["Rock","Paper","Scissors"]
 
 #computer=random.choice(option)
 
@@ -20,18 +20,18 @@ while move:
                 print(f"Computer choice:- {computer}")
                 print("Game Tie")
                 TieCount+=1
-         elif user=="stone" and computer=="scissor":
+         elif user=="Rock" and computer=="Scissors ":
                print(f"Computer choice:- {computer}")
                print("You won")
                userCount+=1
 
-         elif user=="paper" and computer=="stone":
+         elif user=="Paper" and computer=="Rock":
                print(f"Computer choice:- {computer}")
                print("You won")
                userCount+=1      
               
 
-         elif user=="scissor" and computer=="paper":
+         elif user=="Scissors " and computer=="Paper":
                print(f"Computer choice:- {computer}")
                print("You won")
                userCount+=1  
