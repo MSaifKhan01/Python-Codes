@@ -68,24 +68,21 @@ while flag:
             content=file.read()
             arr=json.loads(content)
             if(len(arr)>0):
-                for item in arr:
-                 if(item['id']==id):
-                    sum+=item['price']
-                    arr.remove(item)
-                 with open("Data.json","w") as file:
-                  json.dump(arr,file)
-                  print("--------------------------")
-                  print("Snacks selled succesfully")
-                  print("--------------------------")
-                else: 
-                     print("put Right id") 
-
+                 for item in arr:
+                    if(item['id']==id):
+                        sum+=item['price']
+                        arr.remove(item)
+                        with open("Data.json","w") as file:
+                            json.dump(arr,file)
+                            print("--------------------------")
+                            print("Snacks selled succesfully")
+                            print("--------------------------")
+                    else:
+                        print("put Right id") 
             else:
-             print("no data available")     
-
-             
-    
-            
+                print("no data available")  
+                     
+                         
     elif userinput==6:
         print("--------------------------")
         print(f"Total sale-Price:- {sum}")
