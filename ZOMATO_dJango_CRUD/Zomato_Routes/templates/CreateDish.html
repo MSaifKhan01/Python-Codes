@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create Your Dish here</h1>
+    <form method="post" action="/create">
+        {% csrf_token %}
+        <input type="number" name="id">
+        <input type="text" name="name">
+        <input type="number" name="price">
+        <input type="text" name="available">
+        <input type="submit">
+    </form>
+    <a href="/">Read</a><br>
+    <a href="/create">Create Menu</a>
+    <a href="/update">Update</a>
+    <a href="/delete">Delete</a>
+    <a href="/order">Order</a>
+    <a href="/view">View order</a>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Dishes</h1>
+    {% for item in data %}
+        <div>
+            <p>ID:- {{item.id}}, Name:- {{item.name}} ,    price:- {{item.price}}</p>
+        </div>
+    {% endfor %}
+    <a href="/">Read</a><br>
+    <a href="/create">Create Menu</a>
+    <a href="/update">Update</a>
+    <a href="/delete">Delete</a>
+    <a href="/order">Order</a>
+    <a href="/view">View order</a>
+</body>
+</html>
