@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+        
+        select {
+            appearance: none;
+            -webkit-appearance: none;
+            padding-right: 30px;
+            background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-512.png") no-repeat right center / 20px 20px;
+        }
+        
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <label for="ID">Enter ID:</label>
+            <input type="number" name="ID" id="id" />
+  
+            <label for="DishName">Enter Dish Name:</label>
+            <input type="text" name="DishName" id="DishName" />
+  
+            <label for="price">Enter Price Name:</label>
+            <input type="number" name="price" id="price" />
+  
+            <label for="available">Select Availability:</label>
+            <select name="available" id="available">
+                <option value="yes">YES</option>
+                <option value="no">NO</option>
+            </select>
+  
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+</body>
+</html>
+<script src="Scripts/create.js"></script>
