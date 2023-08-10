@@ -1,7 +1,7 @@
 const ids = document.getElementById("id")
 const dishnameele = document.getElementById("DishName")
 const price = document.getElementById("price")
-const availablityele = document.getElementById("available").value
+const availablityele = document.getElementById("available")
 const formele = document.querySelector("form")
 
 formele.addEventListener("submit", (e) => {
@@ -10,7 +10,7 @@ formele.addEventListener("submit", (e) => {
         id: ids.value,
         dishname: dishnameele.value,
         price: price.value,
-        available: availablityele,
+        available: availablityele.value,
     }
     const options = {
         method: "POST",

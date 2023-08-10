@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Data Here</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .nav {
+            background-color: blueviolet;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .nav button {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .nav button a{
+            text-decoration: none;
+        }
+
+        .nav button:hover {
+            border-bottom: 2px solid white;
+        }
+
+
+        form {
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        input[type="number"],
+        select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        select {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #append {
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 25px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .newdiv{
+            background-color: bisque;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            form {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            input[type="number"],
+            select {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+
+            input[type="submit"] {
+                padding: 8px 16px;
+            }
+
+            #append {
+                grid-template-columns: repeat(1, 1fr);
+                gap: 10px;
+                margin: 10px;
+            }
+
+            .newdiv {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <button><a href="./read.html">ALL DATA</a></button>
+        <button><a href="./index.html">Create Dish</a></button>
+        <button><a href="./OrderForm.html">Order Here</a></button>
+    </div>
+    <form action="">
+        <input type="number" id="id" placeholder="Enter ID">
+        <select name="" id="selectel">
+            <option value="">Change the status of orders</option>
+            <option value="pending">Pending</option>
+            <option value="received">Received</option>
+            <option value="preparing">Preparing</option>
+            <option value="pickup">Pickup</option>
+            <option value="delivered">Delivered</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="append"></div>
+</body>
+<script src="./Scripts/order.js"></script>
+
+</html>
