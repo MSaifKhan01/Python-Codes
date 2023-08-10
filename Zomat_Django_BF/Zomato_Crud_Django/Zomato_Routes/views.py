@@ -30,6 +30,7 @@ def Update(request):
     return HttpResponse(json.dumps({"msg":"Updated"}))
 
 def Delete(request):
+    
     if request.method=="DELETE":
         body=json.loads(request.body)
         id=body['id']
