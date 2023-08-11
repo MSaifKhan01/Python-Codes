@@ -55,7 +55,7 @@ function fetchAndRender(data) {
                 return res.json()
             })
             .then((data)=>{
-                location.reload();
+                //location.reload();
                 DisplayData()
             })
             .catch((err)=>{

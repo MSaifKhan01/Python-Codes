@@ -28,7 +28,7 @@ def Get(req):
 
 def Update(req,itemid):
     menu=get_object_or_404(FoodItem,id=itemid)
-    if(req.method=="DELETE"):
+    if(req.method=="PATCH"):
         
          if(menu.available=="yes"):
             menu.available="no"
