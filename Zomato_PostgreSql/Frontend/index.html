@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .nav {
+            background-color: blueviolet;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .nav button {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .nav button a{
+            text-decoration: none;
+        }
+
+        .nav button:hover {
+            border-bottom: 2px solid white;
+        }
+
+      form {
+        margin: 20px;
+        padding: 20px;
+        width: 50vh;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .formel{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="number"],
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 16px;
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        padding-right: 30px;
+        background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-arrow-down-b-512.png")
+          no-repeat right center / 20px 20px;
+      }
+
+      input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      @media screen and (max-width: 600px) {
+        form {
+          margin: 10px;
+          padding: 10px;
+        }
+
+        input[type="number"],
+        input[type="text"],
+        select {
+          font-size: 14px;
+        }
+
+        input[type="submit"] {
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <button><a href="./read.html">ALL DATA</a></button>
+      <button><a href="./OrderForm.html">Order Here</a></button>
+      <button><a href="./OrderRead.html">Track Order</a></button>
+      
+    </div>
+    <div class="formel">
+      <form>
+        <label for="ID">Enter ID:</label>
+        <input type="number" name="ID" id="id" />
+
+        <label for="DishName">Enter Dish Name:</label>
+        <input type="text" name="DishName" id="DishName" />
+
+        <label for="price">Enter Price Name:</label>
+        <input type="number" name="price" id="price" />
+
+        <label for="available">Enter Availability Status:</label>
+        <select name="available" id="available">
+          <option value="yes">YES</option>
+          <option value="no">NO</option>
+        </select>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script src="./Scripts/create.js"></script>
+</html>

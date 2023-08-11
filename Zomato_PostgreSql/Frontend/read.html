@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Data Here</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .nav {
+            background-color: blueviolet;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .nav button {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .nav button a{
+            text-decoration: none;
+        }
+
+        .nav button:hover {
+            border-bottom: 2px solid white;
+        }
+
+        #append {
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            gap: 25px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .newdiv{
+            background-color: bisque;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .nav button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            #append {
+                margin: 10px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <button><a href="./index.html">Create Dish</a></button>
+        <button><a href="./OrderForm.html">Order Here</a></button>
+        <button><a href="./OrderRead.html">Track Order</a></button>
+       
+    </div>
+    <div id="append"></div>
+</body>
+<script src="./Scripts/read.js"></script>
+
+</html>
