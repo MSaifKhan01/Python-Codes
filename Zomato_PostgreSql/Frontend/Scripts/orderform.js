@@ -7,8 +7,8 @@ formel.addEventListener("submit", (e) => {
     e.preventDefault()
     const obj = {
         id: idinp.value,
-        food:foodinp.value,
-        customername:nameinp.value,
+        foodname:foodinp.value,
+        name:nameinp.value,
         status:"pending"    
     }
     const options = {
@@ -18,7 +18,7 @@ formel.addEventListener("submit", (e) => {
         },
         body: JSON.stringify(obj)
     }
-    fetch(`https://test-app-3ece.onrender.com/order/create`, options)
+    fetch(`https://zomato-postgresql-db.onrender.com/order/create`, options)
         .then(res => res.json())
         .then((data) => {
             console.log(data);

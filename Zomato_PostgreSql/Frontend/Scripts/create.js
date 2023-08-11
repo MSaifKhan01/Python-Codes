@@ -8,7 +8,7 @@ formele.addEventListener("submit", (e) => {
     e.preventDefault()
     const obj = {
         id: ids.value,
-        dishname: dishnameele.value,
+        foodname: dishnameele.value,
         price: price.value,
         available: availablityele.value,
     }
@@ -19,7 +19,7 @@ formele.addEventListener("submit", (e) => {
         },
         body: JSON.stringify(obj)
     }
-    fetch(`https://zomato-01.onrender.com/crud/create`, options)
+    fetch(`http://127.0.0.1:8000/crud/create`, options)
         .then(res => res.json())
         .then((data) => {
             console.log(data);

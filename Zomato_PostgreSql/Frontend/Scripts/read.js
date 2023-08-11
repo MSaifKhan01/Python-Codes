@@ -1,7 +1,7 @@
 const container = document.getElementById("append")
 
 function DisplayData() {
-    fetch(`https://zomato-01.onrender.com/crud/get`)
+    fetch(`https://zomato-postgresql-db.onrender.com/crud/get`)
         .then((res) => res.json())
         .then((data) => {
             fetchAndRender(data.data)
@@ -17,7 +17,7 @@ function fetchAndRender(data) {
         let id = document.createElement("p")
         id.innerText = ` ID : ${ele.id}`
         let dishname = document.createElement('p')
-        dishname.innerText = ` DISHNAME : ${ele.dishname}`
+        dishname.innerText = ` DISHNAME : ${ele.foodname}`
         let price = document.createElement('p')
         price.innerText = `PRICE : ${ele.price}`
         let available = document.createElement('p')
@@ -27,12 +27,11 @@ function fetchAndRender(data) {
         let updatebutton=document.createElement('button')
         updatebutton.innerText="Update"
         deletebutton.addEventListener('click',()=>{
-            fetch("https://zomato-01.onrender.com/crud/delete",{
+            fetch(`https://zomato-postgresql-db.onrender.com/crud/delete/${ele.id}`,{
                 method:"DELETE",
                 headers:{
                     "Content-Type":"application/json"
-                },
-                body:JSON.stringify({id:ele.id})
+                }
             })
             .then((res)=>{
                 return res.json()
@@ -45,17 +44,18 @@ function fetchAndRender(data) {
             })
         })
         updatebutton.addEventListener('click',()=>{
-            fetch("https://zomato-01.onrender.com/crud/update",{
+            fetch(`https://zomato-postgresql-db.onrender.com/crud/update/${ele.id}`,{
                 method:"PATCH",
                 headers:{
                     "Content-Type":"application/json"
-                },
-                body:JSON.stringify({id:ele.id})
+                }
+               
             })
             .then((res)=>{
                 return res.json()
             })
             .then((data)=>{
+                location.reload();
                 DisplayData()
             })
             .catch((err)=>{

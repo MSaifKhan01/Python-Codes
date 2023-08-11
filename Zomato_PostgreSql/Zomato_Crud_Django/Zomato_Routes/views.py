@@ -26,14 +26,26 @@ def Get(req):
 
 
 
-def Update(requestk,itemid):
+def Update(req,itemid):
     menu=get_object_or_404(FoodItem,id=itemid)
-    menu.available="yes"
-    menu.save()
-    return HttpResponse("Updated")
+    if(req.method=="DELETE"):
+        
+         if(menu.available=="yes"):
+            menu.available="no"
+         else:
+            menu.available="yes"  
 
-def Delete(request,itemid):
-    menu=get_object_or_404(FoodItem,id=itemid)
-    menu.delete()
-    return HttpResponse(json.dumps({"msg":"Deleted"}))
+    else:
+        return JsonResponse({"msg":"eror"})          
+    
+    menu.save()
+    return HttpResponse(json.dumps({"msg":"Updated"}))
+
+def Delete(request, itemid):
+    if request.method == "DELETE":
+        menu = get_object_or_404(FoodItem, id=itemid)
+        menu.delete()
+    else:
+        return JsonResponse({"msg":"eror"})
+    return HttpResponse(json.dumps({"msg": "Deleted"}))
 
