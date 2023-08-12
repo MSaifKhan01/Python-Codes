@@ -1,8 +1,6 @@
 import random
 option=["Rock","Paper","Scissors"]
 
-#computer=random.choice(option)
-
 move=True
 
 userCount=0

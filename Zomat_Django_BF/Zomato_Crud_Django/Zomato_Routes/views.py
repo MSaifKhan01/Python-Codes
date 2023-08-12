@@ -42,3 +42,7 @@ def Delete(request):
     return HttpResponse(json.dumps({"msg":"Deleted"}))
 
 
+#def FilterByStatus():
+    #return HttpResponse(json.dumps({"data":arr}))
+
+

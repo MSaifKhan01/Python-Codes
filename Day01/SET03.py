@@ -1,4 +1,4 @@
-1)
+#1)
 people = [("John", 25), ("Jane", 30)]
 
 for person in people:
@@ -9,8 +9,18 @@ for person in people:
 
 
 
+# tuple unpacking
+arr=[("John", 25), ("Jane", 30)]
+arr1=[]
+for i in range(0,len(arr)):
+    a=list(arr[i])
+    arr1.append(a[0]+ " "+"is"+" " +str(a[1])+ " "+"years old")
+print(arr1)
+print('.'.join(arr1))
 
-3)
+
+
+#3)
 
 def two_sum(nums, target):
     for i in range(len(nums)):
@@ -29,7 +39,7 @@ result = two_sum(nums, target)
 print(result)
 
 
-4)
+#4)
 
 def is_palindrome(word):
     word = word.lower().replace(" ", "")  # Convert to lowercase and remove spaces
@@ -50,8 +60,24 @@ else:
     print(f"The word {input_word} is not a palindrome.")
 
 
- 5)
- def selection_sort(arr):
+ #5)
+
+ # Selection Sort
+arr=[2,4,9,7,8]
+
+for i in range(0,len(arr)):
+    min=i
+    for j in range(i+1,len(arr)):
+        if(arr[j]<arr[min]):
+            min=j
+    temp=arr[i]
+    arr[i]=arr[min]
+    arr[min]=temp
+print(arr)
+
+
+#Or
+def selection_sort(arr):
     n = len(arr)
     for i in range(n):
         min_index = i
