@@ -37,10 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # from here i adding code and confegering
+    "corsheaders",
+    "rest_framework",
     "CrudApp.apps.CrudappConfig"
+    
+    # ------------end----------------
 ]
 
 MIDDLEWARE = [
+     # from here i adding code and confegering
+     "corsheaders.middleware.CorsMiddleware",
+     # ------------end----------------
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,6 +82,10 @@ WSGI_APPLICATION = 'CrudProject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+ # from here i adding code and confegering
+import dj_database_url
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -81,6 +93,9 @@ DATABASES = {
     }
 }
 
+DATABASES['default']== dj_database_url.parse('mysql://root@localhost/djangocruddb')
+
+# ------------end----------------
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -122,3 +137,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+ # from here i adding code and confegering
+CORS_ORIGIN_ALLOW_ALL= True
+CORS_ALLOW_ALL_HEADERS=True
+
+
+
+# ------------end----------------
+
+
+
+
