@@ -28,6 +28,8 @@ def studentApi(request, id=0):
     elif request.method == 'POST':
         student_data = JSONParser().parse(request)
         serializer = StudentSerializer(data=student_data)
+        # print("----serializer-----",serializer,"------request-----",request,"studenData",student_data)
+    
         # if(serializer.data)
         if serializer.is_valid():
             serializer.save()
