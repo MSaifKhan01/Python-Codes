@@ -19,6 +19,38 @@ def studentApi(request, id=0):
     if request.method == 'GET':
         if(resolved_url.route=="student"):
             students = Student.objects.all()
+            
+            #  # Sorting
+            # sort_by = request.GET.get('sort_by', None)
+            # if sort_by:
+            #     students = students.order_by(sort_by)
+            
+            
+            # Sorting-02
+            sort_by = request.GET.get('sort_by', None)
+            sort_order = request.GET.get('sort_order', 'asc')  # default to ascending
+            print("-------",sort_order)
+            print("---1",sort_by)
+
+            if sort_by:
+                if sort_order == 'desc':
+                    print("---2",sort_by)
+                    sort_by = f'-{sort_by}'
+                    print("---3",sort_by)
+                students = students.order_by(sort_by)
+
+            # Filtering
+            name = request.GET.get('name', None)
+            address = request.GET.get('address', None)
+            fee = request.GET.get('fee', None)
+
+            if name:
+                students = students.filter(name__icontains=name)
+            if address:
+                students = students.filter(address__icontains=address)
+            if fee:
+                students = students.filter(fee=fee)
+
             serializer = StudentSerializer(students, many=True)
             return JsonResponse(serializer.data, safe=False)
         else:
